@@ -2,6 +2,6 @@
 #include "allocator.h"
 
 int main(){
-    printf("Custom allocator project started.\n")
+    printf("Custom allocator project started.\n");
     return 0;
 }
