@@ -2,6 +2,8 @@
 #include "allocator.h"
 
 int main(){
-    printf("Custom allocator project started.\n");
+    init_allocator();
+    printf("allocator initialized.\n");
+    print_memory_state();
     return 0;
 }
