@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include <stdio.h>
 #include "allocator.h"
 
 static char heap[HEAP_SIZE];
@@ -19,7 +20,7 @@ void print_memory_state(void) {
         printf("Block %d: \n", blockNumber);
         printf(" Size: %d\n", current->size);
         printf(" Free: %d\n", current->free);
-        printf(" Next: %p\n", (void)current->next);
+        printf(" Next: %p\n", (void *)current->next);
         printf("\n");
 
         current = current->next;
