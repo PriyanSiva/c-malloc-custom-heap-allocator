@@ -13,5 +13,6 @@ void init_allocator(void);
 void *my_malloc(int size);
 void my_free(void *ptr);
 void print_memory_state(void);
+Block *find_free_block(int size);
 
 #endif

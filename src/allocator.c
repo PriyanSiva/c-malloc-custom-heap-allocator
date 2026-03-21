@@ -28,3 +28,35 @@ void print_memory_state(void) {
     }
 
 }
+
+void *my_malloc(int size) {
+    Block *block;
+
+    if (size <= 0) {
+        return NULL;
+    }
+
+    block = find_free_block(size);
+    if(block == NULL) {
+        return NULL;
+    }
+
+    block->free = 0;
+
+    return (void *)(block + 1);
+}
+
+Block *find_free_block(int size) {
+    Block *current = freeList;
+
+    while (current != NULL) {
+        if (current->free == 1 && current->size >=size){
+            if(current->free ==1 && current->size >= size) {
+                return current;
+            }
+            current = current->next;
+        }
+    }
+
+    return NULL;
+}
